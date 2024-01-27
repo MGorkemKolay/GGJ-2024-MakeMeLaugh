@@ -10,15 +10,12 @@ enum MyEnum
     DOWN = 2,
     RIGHT = 3,
     LEFT = 4
-}/*
-        }*/
+}
 
 public class QuickTime : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
-    [SerializeField] Rigidbody2D rb;
-    private bool x = false; 
-    int maxArrow = 3;
+    [SerializeField] int maxArrow = 6;
+    [SerializeField] float time = 0.3f;
 
     public GameObject Up;
     public GameObject Down;
@@ -27,20 +24,17 @@ public class QuickTime : MonoBehaviour
 
     Vector2 vector1;
 
-    //public GameObject button;
-    // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+
 
         vector1 = gameObject.transform.position;
 
-            StartCoroutine(spawn());
+            StartCoroutine(spawnBlock());
     }
-    private void Update()
-    {
-    }
-    private void Naber()
+
+    //Create Object 
+    private void createObject()
     {
         int randomNumber = randomNumbers();
 
@@ -73,16 +67,13 @@ public class QuickTime : MonoBehaviour
             UpBox.transform.position = vector1;
         }
     }
-    IEnumerator spawn()
+    IEnumerator spawnBlock()
     {
-        for(int i = 0;i < 10; i++)
+        for(int i = 0;i < maxArrow; i++)
         {
-            yield return new WaitForSeconds(2f);
-            Naber();
+            yield return new WaitForSeconds(time);
+            createObject();
         }
-
-       
-
     }
     // Update is called once per frame
     private void OnTriggerStay2D(Collider2D collision)
@@ -91,23 +82,18 @@ public class QuickTime : MonoBehaviour
 
         if (Input.GetKey(KeyCode.DownArrow) && boxId == (int)MyEnum.DOWN)
         {
-            Debug.Log("Down");
             Destroy(gameObject);
         }
         else if (Input.GetKey(KeyCode.UpArrow) && boxId == (int)MyEnum.UP)
         {
-
-            Debug.Log("Up");
             Destroy(gameObject);
         }
         else if (Input.GetKey(KeyCode.RightArrow) && boxId == (int)MyEnum.RIGHT)
         {
-            Debug.Log("Right");
             Destroy(gameObject);
         }
         else if (Input.GetKey(KeyCode.LeftArrow) && boxId == (int)MyEnum.LEFT)
         {
-            Debug.Log("Left");
             Destroy(gameObject);
         }
     }
@@ -133,10 +119,7 @@ public class QuickTime : MonoBehaviour
     }
     private int randomNumbers()
     {
-
         System.Random rnd = new System.Random();
-
-        return rnd.Next(1, 5);
-
+        return rnd.Next(1, 4);
     }
 }
