@@ -5,15 +5,12 @@ using UnityEngine;
 
 public class MovingBlock : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float speed = 7f;
     [SerializeField] Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
-    private void naber()
-    {
     }
 
     // Update is called once per frame
