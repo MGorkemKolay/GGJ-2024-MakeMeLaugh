@@ -11,5 +11,6 @@ public class DeadTrigger : MonoBehaviour
         {
             col.transform.position = SpawnPoint.position;
         }
+        
     }
 }
