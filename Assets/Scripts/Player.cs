@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            animator.SetBool("isWallSlide", false);
+            animator.SetBool("isWallSlide", false); 
             _controller.Parameters.Flying = false;
         }
         if (isJumping)

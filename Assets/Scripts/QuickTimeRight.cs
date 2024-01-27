@@ -25,6 +25,8 @@ public class QuickTime : MonoBehaviour
 
     Vector2 vector1;
 
+    public Animator animator;
+
     void Start()
     {
 
