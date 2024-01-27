@@ -115,20 +115,31 @@ public class Player : MonoBehaviour
 
         if (WallSlide && IsTouchingWall && _controller.Velocity.y <= 0)
         {
+            Debug.Log("WallSlide");
             if (WallFriction == 1)
+            {
+                Debug.Log("WallSlide2");
                 _controller.Parameters.Flying = true;
+            }
+            animator.SetBool("isWallSlide", true);
             _controller.SetVerticalVelocity(_controller.Velocity.y * (1 - WallFriction));
         }
-        else _controller.Parameters.Flying = false;
-
-        if(isJumping){
+        else
+        {
+            animator.SetBool("isWallSlide", false);
+            _controller.Parameters.Flying = false;
+        }
+        if (isJumping)
+        {
             timer -= Time.deltaTime;
-            if(IsTouchingWall){
+            if (IsTouchingWall)
+            {
                 animator.SetBool("isJump", false);
                 isJumping = false;
                 timer = 1.2f;
             }
-            if(timer <= 0){
+            if (timer <= 0)
+            {
                 animator.SetBool("isJump", false);
                 isJumping = false;
                 timer = 1.2f;
