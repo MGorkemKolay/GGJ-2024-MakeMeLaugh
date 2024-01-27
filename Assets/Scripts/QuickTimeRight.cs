@@ -16,6 +16,7 @@ public class QuickTime : MonoBehaviour
 {
     [SerializeField] int maxArrow = 6;
     [SerializeField] float time = 0.3f;
+    int sayac = 0;
 
     public GameObject Up;
     public GameObject Down;
@@ -82,18 +83,22 @@ public class QuickTime : MonoBehaviour
 
         if (Input.GetKey(KeyCode.DownArrow) && boxId == (int)MyEnum.DOWN)
         {
+            sayac++;
             Destroy(gameObject);
         }
         else if (Input.GetKey(KeyCode.UpArrow) && boxId == (int)MyEnum.UP)
         {
+            sayac++;
             Destroy(gameObject);
         }
         else if (Input.GetKey(KeyCode.RightArrow) && boxId == (int)MyEnum.RIGHT)
         {
+            sayac++;
             Destroy(gameObject);
         }
         else if (Input.GetKey(KeyCode.LeftArrow) && boxId == (int)MyEnum.LEFT)
         {
+            sayac++;
             Destroy(gameObject);
         }
     }
