@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 131946436}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Moving
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 265742825}
   - component: {fileID: 265742827}
   - component: {fileID: 265742826}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: UnvisibleGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1734,7 +1734,7 @@ GameObject:
   m_Layer: 0
   m_Name: Spawn Point
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1762,7 +1762,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 580880824}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cp1finish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1812,7 +1812,7 @@ Transform:
   m_GameObject: {fileID: 611842751}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.631193, y: 17.661602, z: -9.997935}
+  m_LocalPosition: {x: 22.63407, y: 17.661602, z: -9.997935}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2231,7 +2231,7 @@ GameObject:
   - component: {fileID: 835464174}
   - component: {fileID: 835464173}
   m_Layer: 0
-  m_Name: Sprite-0002_0
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2372,7 +2372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1153663833}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cp1start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2488,7 +2488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1234433801}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cp1finish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2519,7 +2519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1328369549}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Moving (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3057,7 +3057,7 @@ Transform:
   m_GameObject: {fileID: 1746230639}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.631193, y: 17.661602, z: -9.997935}
+  m_LocalPosition: {x: 22.63407, y: 17.661602, z: -9.997935}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3161,7 +3161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1948220791}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cp1start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
