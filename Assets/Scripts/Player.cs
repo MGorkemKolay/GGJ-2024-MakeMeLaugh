@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.U2D;
 
 public class Player : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class Player : MonoBehaviour
     public bool isDead = false;
     [Tooltip("Animation")]
     public Animator animator;
+    public bool isJumping = false;
     private Rigidbody2D rb;
 
     [Tooltip("Jump strenght.")]
@@ -78,6 +80,7 @@ public class Player : MonoBehaviour
     private float _normalizedHorizontalSpeed;
     private float _groundLingerTime;
     private float _wallLingerTime;
+    private float timer = 1.2f;
     private Walls _lastWallTouched;
 
     private Transform _transform;
@@ -118,6 +121,20 @@ public class Player : MonoBehaviour
         }
         else _controller.Parameters.Flying = false;
 
+        if(isJumping){
+            timer -= Time.deltaTime;
+            if(IsTouchingWall){
+                animator.SetBool("isJump", false);
+                isJumping = false;
+                timer = 1.2f;
+            }
+            if(timer <= 0){
+                animator.SetBool("isJump", false);
+                isJumping = false;
+                timer = 1.2f;
+            }
+        }
+
         HandleInput();
 
         var acceleration = IsGrounded ? _controller.Parameters.AccelerationOnGround : _controller.Parameters.AccelerationInAir;
@@ -147,8 +164,7 @@ public class Player : MonoBehaviour
         {
             Jump(JumpMagnitude);
             animator.SetBool("isJump", true);
-            
-            
+            isJumping = true;
         }
 
 
@@ -157,7 +173,7 @@ public class Player : MonoBehaviour
 
         if (Jumpping && !Input.GetButton("Jump"))
         {
-            
+
             _controller.AddVerticalForce(-JumpInterruptStrength);
         }
 
