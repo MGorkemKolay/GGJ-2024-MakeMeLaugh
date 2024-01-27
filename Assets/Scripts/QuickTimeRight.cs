@@ -10,44 +10,37 @@ enum MyEnum
     DOWN = 2,
     RIGHT = 3,
     LEFT = 4
-}
+}/*
+        }*/
 
 public class QuickTime : MonoBehaviour
 {
-    [SerializeField] private float speed = 15f;
+    [SerializeField] private float speed = 5f;
     [SerializeField] Rigidbody2D rb;
+    private bool x = false; 
+    int maxArrow = 3;
 
     public GameObject Up;
-    //public GameObject Down;
-    //public GameObject Right;
-    //public GameObject Left;
+    public GameObject Down;
+    public GameObject Right;
+    public GameObject Left;
 
     Vector2 vector1;
-    GameObject block ;
 
-
-    //public List<GameObject> ObjectList = new List<GameObject>();
     //public GameObject button;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Invoke("spawnObject", 2f);
-    }
 
-    IEnumerator Spawnx()
-    {
-        spawnObject();
-        yield return new WaitForSeconds(5);
-    }
+        vector1 = gameObject.transform.position;
 
-    // Update is called once per frame
-    void Update()
-    {
-        rb.velocity = new Vector2(speed, rb.velocity.y);
-        StartCoroutine(Spawnx());
+            StartCoroutine(spawn());
     }
-    private void spawnObject()
+    private void Update()
+    {
+    }
+    private void Naber()
     {
         int randomNumber = randomNumbers();
 
@@ -55,30 +48,43 @@ public class QuickTime : MonoBehaviour
         {
             GameObject UpBox = Instantiate(Up);
             UpBox.name = "Up";
+            UpBox.SetActive(true);
             UpBox.transform.position = vector1;
         }
         else if (randomNumber == (int)MyEnum.DOWN)
         {
-            GameObject UpBox = Instantiate(Up);
+            GameObject UpBox = Instantiate(Down);
             UpBox.name = "Down";
+            UpBox.SetActive(true);
             UpBox.transform.position = vector1;
         }
         else if (randomNumber == (int)MyEnum.RIGHT)
         {
-            GameObject UpBox = Instantiate(Up);
+            GameObject UpBox = Instantiate(Right);
             UpBox.name = "Right";
+            UpBox.SetActive(true);
             UpBox.transform.position = vector1;
         }
         else if (randomNumber == (int)MyEnum.LEFT)
         {
-            GameObject UpBox = Instantiate(Up);
+            GameObject UpBox = Instantiate(Left);
             UpBox.name = "Left";
+            UpBox.SetActive(true);
             UpBox.transform.position = vector1;
         }
+    }
+    IEnumerator spawn()
+    {
+        for(int i = 0;i < 10; i++)
+        {
+            yield return new WaitForSeconds(2f);
+            Naber();
+        }
 
-
+       
 
     }
+    // Update is called once per frame
     private void OnTriggerStay2D(Collider2D collision)
     {
         int boxId = checkName();
@@ -130,7 +136,7 @@ public class QuickTime : MonoBehaviour
 
         System.Random rnd = new System.Random();
 
-        return rnd.Next(0, 5);
+        return rnd.Next(1, 5);
 
     }
 }

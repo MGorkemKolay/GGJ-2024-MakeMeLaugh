@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D;
 using UnityEngine;
 
 public class MovingBlock : MonoBehaviour
 {
-    [SerializeField] private float speed = 15f;
+    [SerializeField] private float speed = 5f;
     [SerializeField] Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+    }
+    private void naber()
+    {
     }
 
     // Update is called once per frame
     void Update()
     {
         rb.velocity = new Vector2(speed, rb.velocity.y);
-
     }
 }
