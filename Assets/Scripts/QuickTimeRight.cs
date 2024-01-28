@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using System.Runtime.InteropServices.WindowsRuntime;
+using UnityEngine.SceneManagement;
 
 enum MyEnum
 {
@@ -15,8 +15,10 @@ enum MyEnum
 public class QuickTime : MonoBehaviour
 {
     [SerializeField] int maxArrow = 6;
+    [SerializeField] int nextLevelID = 0;
     [SerializeField] float time = 0.3f;
-    int sayac = 0;
+    [SerializeField] float delayTime = 4.2f;
+    [SerializeField] public int sayac = 0;
 
     public GameObject Up;
     public GameObject Down;
@@ -29,11 +31,11 @@ public class QuickTime : MonoBehaviour
 
     void Start()
     {
-
+        sayac = 0;
 
         vector1 = gameObject.transform.position;
 
-            StartCoroutine(spawnBlock());
+        StartCoroutine(spawnBlock());
     }
 
     //Create Object 
@@ -72,11 +74,13 @@ public class QuickTime : MonoBehaviour
     }
     IEnumerator spawnBlock()
     {
-        for(int i = 0;i < maxArrow; i++)
+        for (int i = 0; i < maxArrow; i++)
         {
             yield return new WaitForSeconds(time);
             createObject();
         }
+        yield return new WaitForSeconds(delayTime);
+        Application.LoadLevel(nextLevelID);
     }
     // Update is called once per frame
     private void OnTriggerStay2D(Collider2D collision)
@@ -85,22 +89,26 @@ public class QuickTime : MonoBehaviour
 
         if (Input.GetKey(KeyCode.DownArrow) && boxId == (int)MyEnum.DOWN)
         {
-            sayac++;
+            Debug.Log("sa");
+            sayac += 1;
             Destroy(gameObject);
         }
         else if (Input.GetKey(KeyCode.UpArrow) && boxId == (int)MyEnum.UP)
         {
-            sayac++;
+            Debug.Log("as");
+            sayac += 1;
             Destroy(gameObject);
         }
         else if (Input.GetKey(KeyCode.RightArrow) && boxId == (int)MyEnum.RIGHT)
         {
-            sayac++;
+            Debug.Log("saa");
+            sayac += 1;
             Destroy(gameObject);
         }
         else if (Input.GetKey(KeyCode.LeftArrow) && boxId == (int)MyEnum.LEFT)
         {
-            sayac++;
+            Debug.Log("asa");
+            sayac += 1;
             Destroy(gameObject);
         }
     }
