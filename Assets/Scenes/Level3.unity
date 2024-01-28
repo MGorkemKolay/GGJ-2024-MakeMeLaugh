@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 138764344}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.03, y: -0.991, z: 0}
+  m_LocalPosition: {x: 32.4, y: -0.991, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2937,7 +2937,7 @@ MonoBehaviour:
   WayPoints:
   - {fileID: 2047433707}
   - {fileID: 138764344}
-  speed: 2
+  speed: 4
   platformDistance: 0.1
 --- !u!19719996 &485365866
 TilemapCollider2D:
@@ -3211,7 +3211,7 @@ Transform:
   m_GameObject: {fileID: 631973501}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0, z: 0}
+  m_LocalPosition: {x: -8.8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3781,7 +3781,7 @@ Transform:
   m_GameObject: {fileID: 1549038483}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.7, y: 0, z: 0}
+  m_LocalPosition: {x: 14.1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3869,7 +3869,7 @@ MonoBehaviour:
   WayPoints:
   - {fileID: 631973501}
   - {fileID: 1549038483}
-  speed: 2
+  speed: 4
   platformDistance: 0.1
 --- !u!483693784 &1836047580
 TilemapRenderer:
@@ -4107,7 +4107,7 @@ Transform:
   m_GameObject: {fileID: 2047433707}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.975, y: -0.991, z: 0}
+  m_LocalPosition: {x: 0.2, y: -0.991, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
