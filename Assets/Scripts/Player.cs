@@ -3,7 +3,6 @@ using UnityEngine.U2D;
 
 public class Player : MonoBehaviour
 {
-
     [Tooltip("Healty")]
     public bool isDead = false;
     [Tooltip("Animation")]
