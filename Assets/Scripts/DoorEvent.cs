@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorEvent : MonoBehaviour
 {
-    private GameObject Door;
+    public GameObject Door;
     public bool isTouchDoor = false;
 
     // Start is called before the first frame update
@@ -12,8 +12,6 @@ public class DoorEvent : MonoBehaviour
     {
        Door = GameObject.FindGameObjectWithTag("Door");
     }
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (Door == null)
@@ -22,8 +20,11 @@ public class DoorEvent : MonoBehaviour
         }
         else
         {
+
             isTouchDoor = true;
             Door.GetComponent<Animator>().SetBool("isOpen", true);
         }
     }
+
+
 }
