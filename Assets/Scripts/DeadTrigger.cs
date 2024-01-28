@@ -14,7 +14,7 @@ public class DeadTrigger : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.name == "Player")
+        if (col.gameObject.tag == "Player")
         {
             col.transform.position = SpawnPoint.position;
             rb.velocity = new Vector2(0.0f, 0.0f);
