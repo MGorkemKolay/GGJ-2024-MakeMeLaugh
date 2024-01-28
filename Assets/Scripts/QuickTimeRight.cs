@@ -127,6 +127,6 @@ public class QuickTime : MonoBehaviour
     private int randomNumbers()
     {
         System.Random rnd = new System.Random();
-        return rnd.Next(1, 4);
+        return rnd.Next(1, 5);
     }
 }

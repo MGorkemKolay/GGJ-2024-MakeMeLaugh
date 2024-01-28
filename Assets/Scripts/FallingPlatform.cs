@@ -21,18 +21,17 @@ public class FallingPlatform : MonoBehaviour
         xyPos = transform.position;
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D()
     {
-
-        if (collision.gameObject.name.Equals("SUKRU"))
+        Debug.Log("SEA");
+        if (gameObject.tag == "Player")
         {
-            Debug.Log("SELAMLAR");
-            rb.isKinematic = false;
             Invoke("disableObject", DisableWaitSecond);
 
             Invoke("ActivateObject", ActiveWaitSecond);
         }
     }
+
     private void disableObject()
     {
         rb.gameObject.SetActive(false);
@@ -40,29 +39,6 @@ public class FallingPlatform : MonoBehaviour
     private void ActivateObject()
     {
         rb.gameObject.SetActive(true);
-        Debug.Log(transform.localPosition);
-        Debug.Log(xyPos);
-        if (transform.position.y >= xyPos.y)
-        {
-
-            rb.velocity = new Vector2(0f, 0f);
-            rb.isKinematic = true;
-            //transform.position = xyPos;
-        }
-        else
-        {
-            rb.gravityScale = -1;
-            rb.velocity = new Vector2(xyPos.x, 1);
-            //rb.velocity = new Vector2(0f, 0f);
-            Invoke("wait", 0.95f);
-            Debug.Log("seai");
-        }
-    }
-    private void wait()
-    {
-        rb.bodyType = RigidbodyType2D.Static;
-        rb.gravityScale = 1;
-        transform.position = xyPos;
     }
 }
 
