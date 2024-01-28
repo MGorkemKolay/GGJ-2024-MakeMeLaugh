@@ -5,9 +5,10 @@ using UnityEngine;
 public class DeadTrigger : MonoBehaviour
 {
     [SerializeField] Transform SpawnPoint;
+
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.name == "Player")
+        if (col.gameObject.name == "SUKRU")
         {
             col.transform.position = SpawnPoint.position;
         }
