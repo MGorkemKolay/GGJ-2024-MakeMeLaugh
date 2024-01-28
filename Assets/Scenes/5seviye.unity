@@ -869,7 +869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxArrow: 12
-  nextLevelID: 2
+  nextLevelID: 0
   time: 0.583
   delayTime: 4.2
   sayac: 0
